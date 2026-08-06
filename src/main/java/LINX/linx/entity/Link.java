@@ -30,8 +30,6 @@ public class Link {
     @JoinColumn(name = "folder_id")
     private Folder folder;
 
-    // user_id는 참조할 User 클래스가 없는 관계로 보류
-
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "user_id", nullable = false)
     private User user;

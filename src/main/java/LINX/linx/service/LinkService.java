@@ -1,6 +1,6 @@
 package LINX.linx.service;
 
-import LINX.linx.entity.Link;
+import LINX.linx.dto.LinkResponse;
 import LINX.linx.repository.LinkRepository;
 import org.springframework.stereotype.Service;
 
@@ -15,7 +15,10 @@ public class LinkService {
         this.linkRepository = linkRepository;
     }
 
-    public List<Link> getAllLinks() {
-        return linkRepository.findAll();
+    public List<LinkResponse> getAllLinks() {
+        return linkRepository.findAll()
+                .stream()
+                .map(LinkResponse::from)
+                .toList();
     }
 }
