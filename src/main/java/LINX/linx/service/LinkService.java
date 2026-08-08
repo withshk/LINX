@@ -9,7 +9,7 @@ import java.util.List;
 @Service
 public class LinkService {
 
-    public final LinkRepository linkRepository;
+    private final LinkRepository linkRepository;
 
     public LinkService(LinkRepository linkRepository) {
         this.linkRepository = linkRepository;
