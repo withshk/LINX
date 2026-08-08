@@ -10,7 +10,7 @@ public class LinkResponse {
 
     private final Long id;
     private final String url;
-    private final String title;
+    private final String name;
     private final String description;
     private final String imageUrl;
     private final int clickCount;
@@ -19,11 +19,11 @@ public class LinkResponse {
     private final Long folderId;
 
 
-    public LinkResponse(Long id, String url, String title, String description,
+    public LinkResponse(Long id, String url, String name, String description,
                         String imageUrl, int clickCount, boolean isPinned,
                         LocalDateTime createdAt, Long folderId) {
         this.id = id;
-        this.title = title;
+        this.name = name;
         this.url = url;
         this.description = description;
         this.imageUrl = imageUrl;
@@ -37,7 +37,7 @@ public class LinkResponse {
         return new LinkResponse(
                 link.getId(),
                 link.getUrl(),
-                link.getTitle(),
+                link.getName(),
                 link.getDescription(),
                 link.getImageUrl(),
                 link.getClickCount(),

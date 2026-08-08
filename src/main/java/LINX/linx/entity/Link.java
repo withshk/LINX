@@ -16,7 +16,7 @@ public class Link {
     private Long id;
 
     private String url;
-    private String title;
+    private String name;
     private String description;
     private String imageUrl;
 

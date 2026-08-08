@@ -23,7 +23,7 @@ public class User {
     private String password;
 
     @Column(nullable = false)
-    private String nickname;
+    private String username;
 
     private String profileImageUrl;
 
