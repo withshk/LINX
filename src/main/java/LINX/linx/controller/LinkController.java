@@ -1,7 +1,9 @@
 package LINX.linx.controller;
 
 
+import LINX.linx.dto.LinkListData;
 import LINX.linx.dto.LinkResponse;
+import LINX.linx.dto.common.ApiResponse;
 import LINX.linx.service.LinkService;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -20,8 +22,9 @@ public class LinkController {
     }
 
     @GetMapping
-    public List<LinkResponse> getAllLinks() {
-        return linkService.getAllLinks();
+    public ApiResponse<LinkListData> getAllLinks() {
+        List<LinkResponse> links = linkService.getAllLinks();
+        LinkListData data = new LinkListData(links, links.size());
+        return ApiResponse.success(data);
     }
-
 }
