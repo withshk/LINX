@@ -1,7 +1,7 @@
-package LINX.linx.controller;
+package LINX.linx.folder.controller;
 
-import LINX.linx.dto.FolderResponse;
-import LINX.linx.service.FolderService;
+import LINX.linx.folder.dto.response.FolderResponse;
+import LINX.linx.folder.service.FolderService;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;

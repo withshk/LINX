@@ -1,4 +1,4 @@
-package LINX.linx.exception;
+package LINX.linx.dto.common.exception;
 
 import LINX.linx.dto.ErrorResponse;
 import org.springframework.http.ResponseEntity;

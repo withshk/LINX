@@ -1,10 +1,10 @@
-package LINX.linx.controller;
+package LINX.linx.link.controller;
 
 
-import LINX.linx.dto.LinkListData;
-import LINX.linx.dto.LinkResponse;
-import LINX.linx.dto.common.ApiResponse;
-import LINX.linx.service.LinkService;
+import LINX.linx.link.dto.LinkListData;
+import LINX.linx.link.dto.response.LinkResponse;
+import LINX.linx.dto.ApiResponse;
+import LINX.linx.link.service.LinkService;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;

@@ -1,7 +1,7 @@
-package LINX.linx.service;
+package LINX.linx.link.service;
 
-import LINX.linx.dto.LinkResponse;
-import LINX.linx.repository.LinkRepository;
+import LINX.linx.link.dto.response.LinkResponse;
+import LINX.linx.link.repository.LinkRepository;
 import org.springframework.stereotype.Service;
 
 import java.util.List;

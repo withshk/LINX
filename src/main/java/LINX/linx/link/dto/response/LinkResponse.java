@@ -1,6 +1,6 @@
-package LINX.linx.dto;
+package LINX.linx.link.dto.response;
 
-import LINX.linx.entity.Link;
+import LINX.linx.link.Link;
 import lombok.Getter;
 
 import java.time.LocalDateTime;

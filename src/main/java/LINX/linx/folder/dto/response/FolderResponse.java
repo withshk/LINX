@@ -1,6 +1,6 @@
-package LINX.linx.dto;
+package LINX.linx.folder.dto.response;
 
-import LINX.linx.entity.Folder;
+import LINX.linx.folder.Folder;
 import lombok.Getter;
 
 @Getter
