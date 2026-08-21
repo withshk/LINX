@@ -1,8 +1,7 @@
-package LINX.linx.service;
+package LINX.linx.folder.service;
 
-import LINX.linx.dto.FolderResponse;
-import LINX.linx.entity.Folder;
-import LINX.linx.repository.FolderRepository;
+import LINX.linx.folder.dto.response.FolderResponse;
+import LINX.linx.folder.repository.FolderRepository;
 import org.springframework.stereotype.Service;
 
 import java.util.List;

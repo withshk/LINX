@@ -1,9 +1,6 @@
-package LINX.linx.dto.common;
+package LINX.linx.dto;
 
-import LINX.linx.dto.LinkResponse;
 import lombok.Getter;
-
-import java.util.List;
 
 @Getter
 public class ApiResponse<T> {

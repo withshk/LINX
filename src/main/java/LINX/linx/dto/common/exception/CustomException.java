@@ -1,4 +1,4 @@
-package LINX.linx.exception;
+package LINX.linx.dto.common.exception;
 
 import org.springframework.http.HttpStatus;
 

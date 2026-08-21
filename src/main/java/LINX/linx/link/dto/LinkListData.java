@@ -1,5 +1,6 @@
-package LINX.linx.dto;
+package LINX.linx.link.dto;
 
+import LINX.linx.link.dto.response.LinkResponse;
 import lombok.Getter;
 
 import java.util.List;

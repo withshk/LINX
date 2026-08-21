@@ -1,4 +1,4 @@
-package LINX.linx.dto;
+package LINX.linx.link.dto.request;
 
 import lombok.Getter;
 
