@@ -35,4 +35,8 @@ public class Link {
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "user_id", nullable = false)
     private User user;
+
+    public void togglePinned() {
+        this.isPinned = !this.isPinned; // 고정 상태 반전
+    }
 }
