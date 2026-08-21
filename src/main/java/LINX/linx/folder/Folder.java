@@ -1,6 +1,6 @@
 package LINX.linx.folder;
 
-import LINX.linx.entity.User;
+import LINX.linx.user.User;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
