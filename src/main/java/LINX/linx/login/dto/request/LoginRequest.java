@@ -1,4 +1,4 @@
-package LINX.linx.user.dto.request;
+package LINX.linx.login.dto.request;
 
 import lombok.Getter;
 import lombok.RequiredArgsConstructor;

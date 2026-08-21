@@ -1,4 +1,4 @@
-package LINX.linx.user.dto.response;
+package LINX.linx.login.dto.response;
 
 import LINX.linx.user.User;
 import lombok.Getter;

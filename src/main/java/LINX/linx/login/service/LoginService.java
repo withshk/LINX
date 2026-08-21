@@ -1,7 +1,7 @@
-package LINX.linx.user.service;
+package LINX.linx.login.service;
 
-import LINX.linx.user.dto.response.LoginResponse;
-import LINX.linx.user.repository.LoginRepository;
+import LINX.linx.login.repository.LoginRepository;
+import LINX.linx.login.dto.response.LoginResponse;
 import org.springframework.stereotype.Service;
 
 import java.util.List;

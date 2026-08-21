@@ -1,4 +1,4 @@
-package LINX.linx.user.repository;
+package LINX.linx.login.repository;
 
 import LINX.linx.user.User;
 import org.springframework.data.jpa.repository.JpaRepository;
