@@ -26,7 +26,7 @@ public class LinkController {
         return ApiResponse.success(data);
     }
 
-    @PostMapping("/{linkId}/pin")
+    @PatchMapping("/{linkId}/pin")
     public LinkResponse togglePin(@PathVariable Long linkId) {
         return linkService.togglePin(linkId);
     }
