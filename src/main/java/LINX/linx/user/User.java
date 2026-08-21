@@ -1,4 +1,4 @@
-package LINX.linx.entity;
+package LINX.linx.user;
 
 import jakarta.persistence.*;
 import lombok.Getter;
@@ -23,11 +23,18 @@ public class User {
     private String password;
 
     @Column(nullable = false)
+    private boolean rememberMe;
+
+    @Column(nullable = false)
     private String username;
 
     private String profileImageUrl;
 
     private boolean isVerified;
 
+
+
     private LocalDateTime createdAt;
+
+
 }
