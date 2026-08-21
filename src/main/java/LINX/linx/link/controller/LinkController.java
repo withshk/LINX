@@ -5,9 +5,7 @@ import LINX.linx.link.dto.LinkListData;
 import LINX.linx.link.dto.response.LinkResponse;
 import LINX.linx.dto.ApiResponse;
 import LINX.linx.link.service.LinkService;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -26,5 +24,10 @@ public class LinkController {
         List<LinkResponse> links = linkService.getAllLinks();
         LinkListData data = new LinkListData(links, links.size());
         return ApiResponse.success(data);
+    }
+
+    @PostMapping("/{linkId}/pin")
+    public LinkResponse togglePin(@PathVariable Long linkId) {
+        return linkService.togglePin(linkId);
     }
 }
