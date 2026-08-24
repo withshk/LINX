@@ -40,6 +40,10 @@ public class Link {
         this.isPinned = !this.isPinned; // 고정 상태 반전
     }
 
+    public void increaseClickCount() {
+        this.clickCount += 1;
+    }
+
     /*
         public Link() {}는 @NoArgsConstructor가 자동으로 만들어줬다.
         new Link();를 호출하면 실행된다.
