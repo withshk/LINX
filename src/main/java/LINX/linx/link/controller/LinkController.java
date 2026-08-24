@@ -29,8 +29,13 @@ public class LinkController {
     }
 
     @PatchMapping("/{linkId}/pin")
-    public LinkResponse togglePin(@PathVariable Long linkId) {
+    public LinkResponse togglePin(@PathVariable Long linkId) { //PathVariable로 {linkId}에 값을 받음
         return linkService.togglePin(linkId);
+    }
+
+    @PatchMapping("/{linkId}/click")
+    public LinkResponse increaseClickCount(@PathVariable Long linkId) {
+        return linkService.increaseClickCount(linkId);
     }
 
     private Long getCurrentUserId(){
