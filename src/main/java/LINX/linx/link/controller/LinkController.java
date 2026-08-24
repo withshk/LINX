@@ -5,8 +5,11 @@ import LINX.linx.link.dto.LinkListData;
 import LINX.linx.link.dto.request.LinkRequest;
 import LINX.linx.link.dto.response.LinkResponse;
 import LINX.linx.dto.ApiResponse;
+import LINX.linx.dto.common.exception.CustomException;
 import LINX.linx.link.service.LinkService;
-import LINX.linx.user.User;
+import jakarta.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpSession;
+import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -38,13 +41,17 @@ public class LinkController {
         return linkService.increaseClickCount(linkId);
     }
 
-    private Long getCurrentUserId(){
-        return 1L; // 로그인 기능이 없기 때문에 임시로 만든 유저 아이디
+    private Long getCurrentUserId(HttpServletRequest request) {
+        HttpSession session = request.getSession(false);
+        if (session == null || session.getAttribute("userId") == null) {
+            throw new CustomException("LOGIN_REQUIRED", HttpStatus.UNAUTHORIZED, "로그인이 필요합니다.");
+        }
+        return (Long) session.getAttribute("userId");
     }
 
     @PostMapping
-    public ApiResponse<LinkResponse> createLink(@RequestBody LinkRequest linkRequest) {
-        Long userId = getCurrentUserId();
+    public ApiResponse<LinkResponse> createLink(@RequestBody LinkRequest linkRequest, HttpServletRequest request) {
+        Long userId = getCurrentUserId(request);
         LinkResponse response = linkService.createLink(linkRequest, userId);
         return ApiResponse.success(response);
     }
