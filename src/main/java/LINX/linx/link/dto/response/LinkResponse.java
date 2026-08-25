@@ -33,6 +33,7 @@ public class LinkResponse {
         this.folderId = folderId;
     }
 
+
     public static LinkResponse from(Link link) {
         return new LinkResponse(
                 link.getId(),
