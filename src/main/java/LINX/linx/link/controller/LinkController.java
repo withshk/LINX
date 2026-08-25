@@ -41,6 +41,12 @@ public class LinkController {
         return linkService.increaseClickCount(linkId);
     }
 
+    @DeleteMapping("/{linkId}")
+    public ApiResponse<Void> deleteLink(@PathVariable Long linkId) {
+        linkService.deleteLink(linkId);
+        return ApiResponse.success("링크가 삭제되었습니다.");
+    }
+
     private Long getCurrentUserId(HttpServletRequest request) {
         HttpSession session = request.getSession(false);
         if (session == null || session.getAttribute("userId") == null) {
