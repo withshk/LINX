@@ -70,7 +70,6 @@ public class SignupService {
         } catch (CustomException e) {
             throw e;
         }
-        // 7. 회원가입 실패
         catch (Exception e) {
             throw new CustomException("SIGNUP_FAILED", HttpStatus.INTERNAL_SERVER_ERROR, "나중에 다시 시도해주십시오.");
         }
