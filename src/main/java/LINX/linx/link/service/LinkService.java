@@ -56,6 +56,13 @@ public class LinkService {
         return LinkResponse.from(link);
     }
 
+    public void deleteLink(Long id) {
+        Link link = linkRepository.findById(id)
+                .orElseThrow(() -> new CustomException("LINK_NOT_FOUND", HttpStatus.NOT_FOUND, "존재하지 않는 링크입니다."));
+
+        linkRepository.delete(link);
+    }
+
     public LinkResponse createLink(LinkRequest linkRequest, Long userId) {
         if (linkRequest.getUrl() == null || linkRequest.getUrl().isBlank()) {
             throw new CustomException("MISSING_FIELD", HttpStatus.BAD_REQUEST, "url을 입력해주세요.");
@@ -90,5 +97,7 @@ public class LinkService {
         return LinkResponse.from(link);
 
     }
+
+
 
 }
