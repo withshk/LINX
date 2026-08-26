@@ -11,8 +11,10 @@ import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpSession;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.multipart.MultipartFile;
 
 import java.util.List;
+import java.util.Map;
 
 @RestController
 @RequestMapping("/api/links")
@@ -62,5 +64,11 @@ public class LinkController {
         return ApiResponse.success(response);
     }
 
+    @PostMapping("/{linkId}/image")
+    public ApiResponse<Map<String, Object>> uploadImage(@PathVariable Long linkId,
+                                                          @RequestParam(value = "image", required = false) MultipartFile image) {
+        LinkResponse response = linkService.uploadImage(linkId, image);
+        return ApiResponse.success(Map.of("id", response.getId(), "imageUrl", response.getImageUrl()));
+    }
 
 }

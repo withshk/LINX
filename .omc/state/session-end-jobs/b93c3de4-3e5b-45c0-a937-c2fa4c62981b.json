@@ -3,9 +3,9 @@
   "jobId": "0e34b469-fea7-4a23-a7c3-cadd2b2bbb90",
   "sessionId": "b93c3de4-3e5b-45c0-a937-c2fa4c62981b",
   "scopeKey": "c0e9ddc94abab439061a560eaa53a5e030d5b47c6f1398b78db5911e5d1190db",
-  "revision": 41,
+  "revision": 43,
   "createdAt": "2026-08-25T23:28:52.531Z",
-  "updatedAt": "2026-08-25T23:28:53.302Z",
+  "updatedAt": "2026-08-26T08:19:00.667Z",
   "producerGraceExpiresAt": "2026-08-25T23:29:22.531Z",
   "bestEffortDeadlineAt": "2026-08-25T23:30:13.531Z",
   "producers": {
