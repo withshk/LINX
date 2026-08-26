@@ -1,0 +1,7 @@
+{
+  "tool_name": "Bash",
+  "tool_input_preview": "{\"command\":\"git checkout -- src/main/java/LINX/linx/dto/common/exception/GlobalExceptionHandler.java src/main/java/LINX/linx/link/Link.java src/main/java/LINX/linx/link/controller/LinkController.java ...",
+  "error": "Exit code 2\nugrep: error: error at position 5\n(?m)^?? (?:[^\\n\\x80-\\xbf][\\x80-\\xbf]*)omc|^ M (?:[^\\n\\x80-\\xbf][\\x80-\\xbf]*)omc\n     \\___invalid syntax",
+  "timestamp": "2026-08-25T10:12:58.456Z",
+  "retry_count": 1
+}

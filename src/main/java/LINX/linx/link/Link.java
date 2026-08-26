@@ -60,4 +60,12 @@ public class Link {
         this.createdAt = LocalDateTime.now();
     }
 
+    public void updateLink(Link link) {
+
+    }
+
+    public void uploadImage(String imageUrl) {
+        this.imageUrl = imageUrl;
+    }
+
 }

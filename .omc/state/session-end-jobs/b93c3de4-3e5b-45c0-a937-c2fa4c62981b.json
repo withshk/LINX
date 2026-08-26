@@ -1,0 +1,328 @@
+{
+  "version": 1,
+  "jobId": "0e34b469-fea7-4a23-a7c3-cadd2b2bbb90",
+  "sessionId": "b93c3de4-3e5b-45c0-a937-c2fa4c62981b",
+  "scopeKey": "c0e9ddc94abab439061a560eaa53a5e030d5b47c6f1398b78db5911e5d1190db",
+  "revision": 41,
+  "createdAt": "2026-08-25T23:28:52.531Z",
+  "updatedAt": "2026-08-25T23:28:53.302Z",
+  "producerGraceExpiresAt": "2026-08-25T23:29:22.531Z",
+  "bestEffortDeadlineAt": "2026-08-25T23:30:13.531Z",
+  "producers": {
+    "core": {
+      "state": "sealed",
+      "intentKey": "e3da82e253a3a9fb21e1cbe8adc9ec434f546ebcf72f330ab5315dee91c38ee3",
+      "payloadDigest": "e3da82e253a3a9fb21e1cbe8adc9ec434f546ebcf72f330ab5315dee91c38ee3",
+      "sealedAt": "2026-08-25T23:28:52.567Z",
+      "sealedBy": "foreground"
+    },
+    "wiki": {
+      "state": "no-op",
+      "sealedAt": "2026-08-25T23:28:52.531Z",
+      "sealedBy": "wiki-producer"
+    }
+  },
+  "actions": {
+    "foreground-cleanup": {
+      "class": "required",
+      "phase": "deferred-required",
+      "status": "completed",
+      "attempts": 0,
+      "idempotencyKey": "febf6dba2f2536433960a07f7cedce72e946b43ced0896570df80f017b8914d2",
+      "payload": {
+        "transcriptPath": "/Users/withshk0527/.claude/projects/-Users-withshk0527/b93c3de4-3e5b-45c0-a937-c2fa4c62981b.jsonl",
+        "cwd": "/Users/withshk0527/INFO/PROJECT/linx",
+        "reason": "other",
+        "input": {
+          "session_id": "b93c3de4-3e5b-45c0-a937-c2fa4c62981b",
+          "transcript_path": "/Users/withshk0527/.claude/projects/-Users-withshk0527/b93c3de4-3e5b-45c0-a937-c2fa4c62981b.jsonl",
+          "cwd": "/Users/withshk0527/INFO/PROJECT/linx",
+          "prompt_id": "78f27a01-5d47-4bcd-bf7f-7824728a90a3",
+          "hook_event_name": "SessionEnd",
+          "reason": "other"
+        },
+        "metrics": {
+          "session_id": "b93c3de4-3e5b-45c0-a937-c2fa4c62981b",
+          "ended_at": "2026-08-25T23:28:52.530Z",
+          "reason": "other",
+          "agents_spawned": 0,
+          "agents_completed": 0,
+          "modes_used": []
+        },
+        "initialTeamNames": [],
+        "openClawEnabled": false,
+        "openClawRouting": {},
+        "foregroundResult": {
+          "removedTransientFiles": 2,
+          "completedAt": "2026-08-25T23:28:52.567Z"
+        }
+      },
+      "budgetMs": 9000,
+      "completedAt": "2026-08-25T23:28:52.567Z",
+      "lastOutcomeCode": "completed"
+    },
+    "wiki-capture": {
+      "class": "required",
+      "phase": "deferred-required",
+      "status": "completed",
+      "attempts": 0,
+      "idempotencyKey": "1719cd1ef5b51e0269b78c4cb8c9308c9c1f7b82fd1c067fc034c060f23863f5",
+      "payload": {},
+      "budgetMs": 9000,
+      "completedAt": "2026-08-25T23:28:52.531Z"
+    },
+    "team-cleanup": {
+      "class": "required",
+      "phase": "deferred-required",
+      "status": "completed",
+      "attempts": 1,
+      "idempotencyKey": "cee6ac31df545408e1e822247ac249b3f8182a98a5fe8e448ae3b251e55bdee1",
+      "payload": {
+        "transcriptPath": "/Users/withshk0527/.claude/projects/-Users-withshk0527/b93c3de4-3e5b-45c0-a937-c2fa4c62981b.jsonl",
+        "cwd": "/Users/withshk0527/INFO/PROJECT/linx",
+        "reason": "other",
+        "input": {
+          "session_id": "b93c3de4-3e5b-45c0-a937-c2fa4c62981b",
+          "transcript_path": "/Users/withshk0527/.claude/projects/-Users-withshk0527/b93c3de4-3e5b-45c0-a937-c2fa4c62981b.jsonl",
+          "cwd": "/Users/withshk0527/INFO/PROJECT/linx",
+          "prompt_id": "78f27a01-5d47-4bcd-bf7f-7824728a90a3",
+          "hook_event_name": "SessionEnd",
+          "reason": "other"
+        },
+        "metrics": {
+          "session_id": "b93c3de4-3e5b-45c0-a937-c2fa4c62981b",
+          "ended_at": "2026-08-25T23:28:52.530Z",
+          "reason": "other",
+          "agents_spawned": 0,
+          "agents_completed": 0,
+          "modes_used": []
+        },
+        "initialTeamNames": [],
+        "openClawEnabled": false,
+        "openClawRouting": {}
+      },
+      "budgetMs": 9000,
+      "claimedAt": "2026-08-25T23:28:52.602Z",
+      "runner": {
+        "attempt": 1,
+        "runnerNonce": "aa6bc4e4-b868-463b-9e28-957caa8a2071",
+        "phase": "terminal",
+        "deadlineAt": "2026-08-25T23:29:02.581Z"
+      },
+      "lastOutcomeCode": "completed",
+      "completedAt": "2026-08-25T23:28:52.693Z"
+    },
+    "python-cleanup": {
+      "class": "required",
+      "phase": "deferred-required",
+      "status": "completed",
+      "attempts": 1,
+      "idempotencyKey": "1f1370c4ac056606059d517e2f106b602d8cbcb04587b3fcc5f3b9f89e649cd0",
+      "payload": {
+        "transcriptPath": "/Users/withshk0527/.claude/projects/-Users-withshk0527/b93c3de4-3e5b-45c0-a937-c2fa4c62981b.jsonl",
+        "cwd": "/Users/withshk0527/INFO/PROJECT/linx",
+        "reason": "other",
+        "input": {
+          "session_id": "b93c3de4-3e5b-45c0-a937-c2fa4c62981b",
+          "transcript_path": "/Users/withshk0527/.claude/projects/-Users-withshk0527/b93c3de4-3e5b-45c0-a937-c2fa4c62981b.jsonl",
+          "cwd": "/Users/withshk0527/INFO/PROJECT/linx",
+          "prompt_id": "78f27a01-5d47-4bcd-bf7f-7824728a90a3",
+          "hook_event_name": "SessionEnd",
+          "reason": "other"
+        },
+        "metrics": {
+          "session_id": "b93c3de4-3e5b-45c0-a937-c2fa4c62981b",
+          "ended_at": "2026-08-25T23:28:52.530Z",
+          "reason": "other",
+          "agents_spawned": 0,
+          "agents_completed": 0,
+          "modes_used": []
+        },
+        "initialTeamNames": [],
+        "openClawEnabled": false,
+        "openClawRouting": {}
+      },
+      "budgetMs": 9000,
+      "claimedAt": "2026-08-25T23:28:52.708Z",
+      "runner": {
+        "attempt": 1,
+        "runnerNonce": "294e759f-4681-4252-8e99-2291d27c5257",
+        "phase": "terminal",
+        "deadlineAt": "2026-08-25T23:29:02.581Z"
+      },
+      "lastOutcomeCode": "completed",
+      "completedAt": "2026-08-25T23:28:52.822Z"
+    },
+    "reply-cleanup": {
+      "class": "required",
+      "phase": "deferred-required",
+      "status": "completed",
+      "attempts": 1,
+      "idempotencyKey": "0b3a8b47c28b26d56aca004d4f572b96c118f16819c0d35162418816f9a5420a",
+      "payload": {
+        "transcriptPath": "/Users/withshk0527/.claude/projects/-Users-withshk0527/b93c3de4-3e5b-45c0-a937-c2fa4c62981b.jsonl",
+        "cwd": "/Users/withshk0527/INFO/PROJECT/linx",
+        "reason": "other",
+        "input": {
+          "session_id": "b93c3de4-3e5b-45c0-a937-c2fa4c62981b",
+          "transcript_path": "/Users/withshk0527/.claude/projects/-Users-withshk0527/b93c3de4-3e5b-45c0-a937-c2fa4c62981b.jsonl",
+          "cwd": "/Users/withshk0527/INFO/PROJECT/linx",
+          "prompt_id": "78f27a01-5d47-4bcd-bf7f-7824728a90a3",
+          "hook_event_name": "SessionEnd",
+          "reason": "other"
+        },
+        "metrics": {
+          "session_id": "b93c3de4-3e5b-45c0-a937-c2fa4c62981b",
+          "ended_at": "2026-08-25T23:28:52.530Z",
+          "reason": "other",
+          "agents_spawned": 0,
+          "agents_completed": 0,
+          "modes_used": []
+        },
+        "initialTeamNames": [],
+        "openClawEnabled": false,
+        "openClawRouting": {}
+      },
+      "budgetMs": 9000,
+      "claimedAt": "2026-08-25T23:28:52.838Z",
+      "runner": {
+        "attempt": 1,
+        "runnerNonce": "d9d7e7d9-1df1-4961-81c9-01a5c6865c6b",
+        "phase": "terminal",
+        "deadlineAt": "2026-08-25T23:29:02.581Z"
+      },
+      "lastOutcomeCode": "completed",
+      "completedAt": "2026-08-25T23:28:52.938Z"
+    },
+    "callback": {
+      "class": "best-effort",
+      "phase": "deferred-best-effort",
+      "status": "completed",
+      "attempts": 1,
+      "idempotencyKey": "d068ede2655bf89e0c0950e087d0603d7dcf45538e94f20a654d08c6f4841895",
+      "payload": {
+        "transcriptPath": "/Users/withshk0527/.claude/projects/-Users-withshk0527/b93c3de4-3e5b-45c0-a937-c2fa4c62981b.jsonl",
+        "cwd": "/Users/withshk0527/INFO/PROJECT/linx",
+        "reason": "other",
+        "input": {
+          "session_id": "b93c3de4-3e5b-45c0-a937-c2fa4c62981b",
+          "transcript_path": "/Users/withshk0527/.claude/projects/-Users-withshk0527/b93c3de4-3e5b-45c0-a937-c2fa4c62981b.jsonl",
+          "cwd": "/Users/withshk0527/INFO/PROJECT/linx",
+          "prompt_id": "78f27a01-5d47-4bcd-bf7f-7824728a90a3",
+          "hook_event_name": "SessionEnd",
+          "reason": "other"
+        },
+        "metrics": {
+          "session_id": "b93c3de4-3e5b-45c0-a937-c2fa4c62981b",
+          "ended_at": "2026-08-25T23:28:52.530Z",
+          "reason": "other",
+          "agents_spawned": 0,
+          "agents_completed": 0,
+          "modes_used": []
+        },
+        "initialTeamNames": [],
+        "openClawEnabled": false,
+        "openClawRouting": {}
+      },
+      "budgetMs": 2000,
+      "claimedAt": "2026-08-25T23:28:52.953Z",
+      "runner": {
+        "attempt": 1,
+        "runnerNonce": "24ba3dd9-6d38-48b5-90e9-30d906969841",
+        "phase": "terminal",
+        "deadlineAt": "2026-08-25T23:29:02.581Z"
+      },
+      "lastOutcomeCode": "completed",
+      "completedAt": "2026-08-25T23:28:53.044Z"
+    },
+    "notification": {
+      "class": "best-effort",
+      "phase": "deferred-best-effort",
+      "status": "completed",
+      "attempts": 1,
+      "idempotencyKey": "89c0438ff63097ce04beb60efb87292ff68a7af350a0ee331f3de9dbf42d62fc",
+      "payload": {
+        "transcriptPath": "/Users/withshk0527/.claude/projects/-Users-withshk0527/b93c3de4-3e5b-45c0-a937-c2fa4c62981b.jsonl",
+        "cwd": "/Users/withshk0527/INFO/PROJECT/linx",
+        "reason": "other",
+        "input": {
+          "session_id": "b93c3de4-3e5b-45c0-a937-c2fa4c62981b",
+          "transcript_path": "/Users/withshk0527/.claude/projects/-Users-withshk0527/b93c3de4-3e5b-45c0-a937-c2fa4c62981b.jsonl",
+          "cwd": "/Users/withshk0527/INFO/PROJECT/linx",
+          "prompt_id": "78f27a01-5d47-4bcd-bf7f-7824728a90a3",
+          "hook_event_name": "SessionEnd",
+          "reason": "other"
+        },
+        "metrics": {
+          "session_id": "b93c3de4-3e5b-45c0-a937-c2fa4c62981b",
+          "ended_at": "2026-08-25T23:28:52.530Z",
+          "reason": "other",
+          "agents_spawned": 0,
+          "agents_completed": 0,
+          "modes_used": []
+        },
+        "initialTeamNames": [],
+        "openClawEnabled": false,
+        "openClawRouting": {}
+      },
+      "budgetMs": 2000,
+      "claimedAt": "2026-08-25T23:28:53.061Z",
+      "runner": {
+        "attempt": 1,
+        "runnerNonce": "9966f236-eba4-434b-8ae7-7d5d0a5b2799",
+        "phase": "terminal",
+        "deadlineAt": "2026-08-25T23:29:02.581Z"
+      },
+      "lastOutcomeCode": "completed",
+      "completedAt": "2026-08-25T23:28:53.155Z"
+    },
+    "openclaw": {
+      "class": "best-effort",
+      "phase": "deferred-best-effort",
+      "status": "completed",
+      "attempts": 1,
+      "idempotencyKey": "31fe8f6e1cf204e27006de511df257326fdd98655122ca437013e8779ffc735b",
+      "payload": {
+        "transcriptPath": "/Users/withshk0527/.claude/projects/-Users-withshk0527/b93c3de4-3e5b-45c0-a937-c2fa4c62981b.jsonl",
+        "cwd": "/Users/withshk0527/INFO/PROJECT/linx",
+        "reason": "other",
+        "input": {
+          "session_id": "b93c3de4-3e5b-45c0-a937-c2fa4c62981b",
+          "transcript_path": "/Users/withshk0527/.claude/projects/-Users-withshk0527/b93c3de4-3e5b-45c0-a937-c2fa4c62981b.jsonl",
+          "cwd": "/Users/withshk0527/INFO/PROJECT/linx",
+          "prompt_id": "78f27a01-5d47-4bcd-bf7f-7824728a90a3",
+          "hook_event_name": "SessionEnd",
+          "reason": "other"
+        },
+        "metrics": {
+          "session_id": "b93c3de4-3e5b-45c0-a937-c2fa4c62981b",
+          "ended_at": "2026-08-25T23:28:52.530Z",
+          "reason": "other",
+          "agents_spawned": 0,
+          "agents_completed": 0,
+          "modes_used": []
+        },
+        "initialTeamNames": [],
+        "openClawEnabled": false,
+        "openClawRouting": {}
+      },
+      "budgetMs": 2000,
+      "claimedAt": "2026-08-25T23:28:53.171Z",
+      "runner": {
+        "attempt": 1,
+        "runnerNonce": "62a4214a-0a8d-46c6-8cda-dc43b74bd1b5",
+        "phase": "terminal",
+        "deadlineAt": "2026-08-25T23:29:02.581Z"
+      },
+      "lastOutcomeCode": "completed",
+      "completedAt": "2026-08-25T23:28:53.270Z"
+    }
+  },
+  "owner": null,
+  "phase": "complete",
+  "completion": {
+    "completedAt": "2026-08-25T23:28:53.286Z",
+    "terminalDigest": "4ee54c2ef8fea1990685dff438e1b07b4b0795bbb69261c538c82ac6e42ce273",
+    "terminalRevision": 40
+  }
+}
