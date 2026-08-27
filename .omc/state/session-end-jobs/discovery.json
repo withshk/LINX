@@ -19,6 +19,12 @@
       "attempts": 0,
       "retryAt": "2026-08-25T23:28:52.542Z",
       "acknowledgedAt": "2026-08-26T08:19:00.673Z"
+    },
+    {
+      "sessionId": "1bd4e07e-7f82-4239-aea2-ee9c443db592",
+      "attempts": 0,
+      "retryAt": "2026-08-27T06:00:39.179Z",
+      "acknowledgedAt": "2026-08-27T06:00:39.946Z"
     }
   ]
 }

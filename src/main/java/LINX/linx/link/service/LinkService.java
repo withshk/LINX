@@ -48,6 +48,14 @@ public class LinkService {
                 .toList();
     }
 
+    public List<LinkResponse> getPinnedLinks() {
+
+        return linkRepository.findByIsPinned(true)
+                .stream()
+                .map(LinkResponse::from)
+                .toList();
+    }
+
     public LinkResponse togglePin(Long id) {
         // findById에서 id를 찾고, 비어있으면 에러
         Link link = linkRepository.findById(id)

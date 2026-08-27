@@ -33,6 +33,13 @@ public class LinkController {
         return ApiResponse.success(data);
     }
 
+    @GetMapping("/pinned")
+    public ApiResponse<LinkListData> getPinnedLinks() {
+        List<LinkResponse> links = linkService.getPinnedLinks();
+        LinkListData data = new LinkListData(links, links.size());
+        return ApiResponse.success(data);
+    }
+
     @PatchMapping("/{linkId}/pin")
     public LinkResponse togglePin(@PathVariable Long linkId) { //PathVariable로 {linkId}에 값을 받음
         return linkService.togglePin(linkId);
@@ -48,6 +55,7 @@ public class LinkController {
         linkService.deleteLink(linkId);
         return ApiResponse.success("링크가 삭제되었습니다.");
     }
+
 
     private Long getCurrentUserId(HttpServletRequest request) {
         HttpSession session = request.getSession(false);
