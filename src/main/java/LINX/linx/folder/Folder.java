@@ -20,4 +20,9 @@ public class Folder {
     @JoinColumn(name = "user_id", nullable = false)
     private User user;
 
+    public Folder(String name, User user) {
+        this.name = name;
+        this.user = user;
+    }
+
 }
