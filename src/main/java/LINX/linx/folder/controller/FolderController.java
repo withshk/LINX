@@ -42,4 +42,10 @@ public class FolderController {
         return ApiResponse.success(response);
     }
 
+    @DeleteMapping("/{folderId}")
+    public ApiResponse<Void> deleteFolder(@PathVariable("folderId") Long folderId) {
+        folderService.deleteFolder(folderId);
+        return ApiResponse.success("폴더가 삭제되었습니다.");
+    }
+
 }

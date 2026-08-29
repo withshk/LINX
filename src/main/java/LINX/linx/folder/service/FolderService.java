@@ -42,4 +42,11 @@ public class FolderService {
 
     }
 
+    public void deleteFolder(Long id) {
+        Folder folder = folderRepository.findById(id)
+                .orElseThrow(() -> new CustomException("FOLDER_NOT_FOUND", HttpStatus.NOT_FOUND, "존재하지 않는 폴더입니다."));
+
+        folderRepository.delete(folder);
+    }
+
 }
