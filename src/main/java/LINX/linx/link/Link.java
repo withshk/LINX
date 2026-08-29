@@ -64,6 +64,10 @@ public class Link {
 
     }
 
+    public void removeFromFolder() {
+        this.folder = null;
+    }
+
     public void uploadImage(String imageUrl) {
         this.imageUrl = imageUrl;
     }
