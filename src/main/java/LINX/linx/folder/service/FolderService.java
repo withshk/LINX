@@ -5,6 +5,8 @@ import LINX.linx.folder.Folder;
 import LINX.linx.folder.dto.request.FolderRequest;
 import LINX.linx.folder.dto.response.FolderResponse;
 import LINX.linx.folder.repository.FolderRepository;
+import LINX.linx.link.Link;
+import LINX.linx.link.repository.LinkRepository;
 import LINX.linx.user.User;
 import LINX.linx.user.repository.UserRepository;
 import org.springframework.http.HttpStatus;
@@ -17,10 +19,12 @@ public class FolderService {
 
     private final FolderRepository folderRepository;
     private final UserRepository userRepository;
+    private final LinkRepository linkRepository;
 
-    public FolderService(FolderRepository folderRepository, UserRepository userRepository) {
+    public FolderService(FolderRepository folderRepository, UserRepository userRepository, LinkRepository linkRepository) {
         this.folderRepository = folderRepository;
         this.userRepository = userRepository;
+        this.linkRepository = linkRepository;
     }
 
     public List<FolderResponse> getAllFolders() {
@@ -45,6 +49,9 @@ public class FolderService {
     public void deleteFolder(Long id) {
         Folder folder = folderRepository.findById(id)
                 .orElseThrow(() -> new CustomException("FOLDER_NOT_FOUND", HttpStatus.NOT_FOUND, "존재하지 않는 폴더입니다."));
+
+        List<Link> links = linkRepository.findByFolderId(id);
+        links.forEach(Link::removeFromFolder);
 
         folderRepository.delete(folder);
     }
