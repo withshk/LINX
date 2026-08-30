@@ -56,4 +56,15 @@ public class FolderService {
         folderRepository.delete(folder);
     }
 
+    public FolderResponse updateFolder(Long id, FolderRequest folderRequest) {
+        Folder folder = folderRepository.findById(id)
+                .orElseThrow(() -> new CustomException("FOLDER_NOT_FOUND", HttpStatus.NOT_FOUND, "존재하지 않는 폴더입니다."));
+
+        if(folder.getName() == null || folder.getName().isBlank()) {
+            throw new CustomException("MISSING_FIELD", HttpStatus.BAD_REQUEST, "폴더 이름을 입력해주세요.");
+        }
+
+        folder.updateFolder(folderRequest.getName());
+        return FolderResponse.from(folder);
+    }
 }
