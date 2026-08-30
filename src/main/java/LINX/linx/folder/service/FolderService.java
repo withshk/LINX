@@ -9,11 +9,13 @@ import LINX.linx.link.Link;
 import LINX.linx.link.repository.LinkRepository;
 import LINX.linx.user.User;
 import LINX.linx.user.repository.UserRepository;
+import jakarta.transaction.Transactional;
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 
+@Transactional
 @Service
 public class FolderService {
 
@@ -60,7 +62,7 @@ public class FolderService {
         Folder folder = folderRepository.findById(id)
                 .orElseThrow(() -> new CustomException("FOLDER_NOT_FOUND", HttpStatus.NOT_FOUND, "존재하지 않는 폴더입니다."));
 
-        if(folder.getName() == null || folder.getName().isBlank()) {
+        if(folderRequest.getName() == null || folderRequest.getName().isBlank()) {
             throw new CustomException("MISSING_FIELD", HttpStatus.BAD_REQUEST, "폴더 이름을 입력해주세요.");
         }
 
