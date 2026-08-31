@@ -41,5 +41,7 @@ out/
 application-secret.properties
 .env
 
+uploads
+
 ### Claude Code / OMC ###
 .omc/

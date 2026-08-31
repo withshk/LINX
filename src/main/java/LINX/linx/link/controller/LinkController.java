@@ -11,8 +11,10 @@ import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpSession;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.multipart.MultipartFile;
 
 import java.util.List;
+import java.util.Map;
 
 @RestController
 @RequestMapping("/api/links")
@@ -27,6 +29,13 @@ public class LinkController {
     @GetMapping
     public ApiResponse<LinkListData> getAllLinks() {
         List<LinkResponse> links = linkService.getAllLinks();
+        LinkListData data = new LinkListData(links, links.size());
+        return ApiResponse.success(data);
+    }
+
+    @GetMapping("/pinned")
+    public ApiResponse<LinkListData> getPinnedLinks() {
+        List<LinkResponse> links = linkService.getPinnedLinks();
         LinkListData data = new LinkListData(links, links.size());
         return ApiResponse.success(data);
     }
@@ -47,6 +56,7 @@ public class LinkController {
         return ApiResponse.success("링크가 삭제되었습니다.");
     }
 
+
     private Long getCurrentUserId(HttpServletRequest request) {
         HttpSession session = request.getSession(false);
         if (session == null || session.getAttribute("userId") == null) {
@@ -61,4 +71,18 @@ public class LinkController {
         LinkResponse response = linkService.createLink(linkRequest, userId);
         return ApiResponse.success(response);
     }
+
+    @PostMapping("/{linkId}/image")
+    public ApiResponse<Map<String, Object>> uploadImage(@PathVariable Long linkId,
+                                                          @RequestParam(value = "image", required = false) MultipartFile image) {
+        LinkResponse response = linkService.uploadImage(linkId, image);
+        return ApiResponse.success(Map.of("id", response.getId(), "imageUrl", response.getImageUrl()));
+    }
+
+    @PatchMapping("/{linkId}")
+    public ApiResponse<LinkResponse> updateLink(@PathVariable Long linkId, @RequestBody LinkRequest linkRequest) {
+        LinkResponse response = linkService.updateLink(linkId, linkRequest);
+        return ApiResponse.success(response);
+    }
+
 }
