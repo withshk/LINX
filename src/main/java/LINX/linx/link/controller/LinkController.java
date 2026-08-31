@@ -79,4 +79,10 @@ public class LinkController {
         return ApiResponse.success(Map.of("id", response.getId(), "imageUrl", response.getImageUrl()));
     }
 
+    @PatchMapping("/{linkId}")
+    public ApiResponse<LinkResponse> updateLink(@PathVariable Long linkId, @RequestBody LinkRequest linkRequest) {
+        LinkResponse response = linkService.updateLink(linkId, linkRequest);
+        return ApiResponse.success(response);
+    }
+
 }
