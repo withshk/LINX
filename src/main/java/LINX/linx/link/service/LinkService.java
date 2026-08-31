@@ -156,5 +156,26 @@ public class LinkService {
     }
 
 
+    public LinkResponse updateLink(Long linkId, LinkRequest linkRequest) {
+        Link link = linkRepository.findById(linkId)
+                .orElseThrow(() -> new CustomException("LINK_NOT_FOUND", HttpStatus.NOT_FOUND, "존재하지 않는 링크입니다."));
+        if(linkRequest.getUrl() == null || linkRequest.getUrl().isBlank()) {
+            throw new CustomException("MISSING_FIELD", HttpStatus.BAD_REQUEST, "url을 입력해주세요.");
+        }
+        if (linkRequest.getName() == null || linkRequest.getName().isBlank()) {
+            throw new CustomException("MISSING_FIELD", HttpStatus.BAD_REQUEST, "이름을 입력해주세요.");
+        }
+        if(!linkRequest.getUrl().startsWith("http://") && !linkRequest.getUrl().startsWith("https://")) {
+            throw new CustomException("INVALID_FORMAT", HttpStatus.BAD_REQUEST, "올바른 url 형식이 아닙니다.");
+        }
+        Folder folder = null;
+        if(linkRequest.getFolderId() != null) {
+            folder = folderRepository.findById(linkRequest.getFolderId())
+                    .orElseThrow(() -> new CustomException("FOLDER_NOT_FOUND", HttpStatus.NOT_FOUND, "존재하지 않는 폴더입니다."));
+        }
+
+        link.updateLink(linkRequest.getUrl(), linkRequest.getName(), linkRequest.getDescription(), folder);
+        return LinkResponse.from(link);
+    }
 
 }
