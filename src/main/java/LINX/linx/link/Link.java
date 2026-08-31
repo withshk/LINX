@@ -60,4 +60,19 @@ public class Link {
         this.createdAt = LocalDateTime.now();
     }
 
+    public void updateLink(String url, String name, String description, Folder folder) {
+        this.url = url;
+        this.name = name;
+        this.description = description;
+        this.folder = folder;
+    }
+
+    public void removeFromFolder() {
+        this.folder = null;
+    }
+
+    public void uploadImage(String imageUrl) {
+        this.imageUrl = imageUrl;
+    }
+
 }
