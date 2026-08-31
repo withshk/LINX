@@ -25,4 +25,8 @@ public class Folder {
         this.user = user;
     }
 
+    public void updateFolder(String name) {
+        this.name = name;
+    }
+
 }

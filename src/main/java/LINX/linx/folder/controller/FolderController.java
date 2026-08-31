@@ -48,4 +48,10 @@ public class FolderController {
         return ApiResponse.success("폴더가 삭제되었습니다.");
     }
 
+    @PatchMapping("/{folderId}")
+    public ApiResponse<FolderResponse> updateFolder(@PathVariable("folderId") Long folderId, @RequestBody FolderRequest folderRequest) {
+        FolderResponse response = folderService.updateFolder(folderId, folderRequest);
+        return ApiResponse.success(response);
+    }
+
 }
