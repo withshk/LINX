@@ -2,6 +2,7 @@ package LINX.linx.user.controller;
 
 import LINX.linx.dto.ApiResponse;
 import LINX.linx.dto.common.exception.CustomException;
+import LINX.linx.user.dto.response.ActivitySummaryResponse;
 import LINX.linx.user.dto.response.UserProfileResponse;
 import LINX.linx.user.service.UserService;
 import jakarta.servlet.http.HttpServletRequest;
@@ -24,6 +25,13 @@ public class UserController {
     public ResponseEntity<ApiResponse<UserProfileResponse>> getProfile(HttpServletRequest request) {
         Long userId = getCurrentUserId(request);
         UserProfileResponse response = userService.getProfile(userId);
+        return ResponseEntity.ok(ApiResponse.success(response));
+    }
+
+    @GetMapping("/activity/summary")
+    public ResponseEntity<ApiResponse<ActivitySummaryResponse>> getActivitySummary(HttpServletRequest request) {
+        Long userId = getCurrentUserId(request);
+        ActivitySummaryResponse response = userService.getActivitySummary(userId);
         return ResponseEntity.ok(ApiResponse.success(response));
     }
 
