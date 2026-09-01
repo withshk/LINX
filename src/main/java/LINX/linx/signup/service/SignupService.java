@@ -13,6 +13,7 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.time.LocalDateTime;
 import java.util.regex.Pattern;
 
 @Service
@@ -72,6 +73,7 @@ public class SignupService {
                     .email(request.getEmail())
                     .username(request.getUsername())
                     .password(encodedPassword)
+                    .createdAt(LocalDateTime.now())
                     .build();
 
             User savedUser = signupRepository.save(user);
