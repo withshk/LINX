@@ -29,8 +29,8 @@ public class FolderService {
         this.linkRepository = linkRepository;
     }
 
-    public List<FolderResponse> getAllFolders() {
-        return folderRepository.findAll()
+    public List<FolderResponse> getAllFolders(Long userId) {
+        return folderRepository.findByUserId(userId)
                 .stream()
                 .map(FolderResponse::from)
                 .toList();

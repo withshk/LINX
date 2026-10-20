@@ -8,11 +8,7 @@ import org.springframework.stereotype.Service;
 @Service
 public class LogoutService {
 
-    public void logout(String refreshToken, HttpSession session) {
-        if (refreshToken == null || refreshToken.isBlank()) {
-            throw new CustomException("MISSING_FIELD", HttpStatus.BAD_REQUEST, "refreshToken이 필요합니다.");
-        }
-
+    public void logout(HttpSession session) {
         try {
             if (session != null) {
                 session.invalidate();

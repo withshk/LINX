@@ -41,16 +41,16 @@ public class LinkService {
         this.userRepository = userRepository;
     } // 받은 값을 쓰기 위해 상위 리포지토리? 에다 대입(색깔놀이)
 
-    public List<LinkResponse> getAllLinks() {
-        return linkRepository.findAll()
+    public List<LinkResponse> getAllLinks(Long userId) {
+        return linkRepository.findByUserId(userId)
                 .stream()
                 .map(LinkResponse::from)
                 .toList();
     }
 
-    public List<LinkResponse> getPinnedLinks() {
+    public List<LinkResponse> getPinnedLinks(Long userId) {
 
-        return linkRepository.findByIsPinned(true)
+        return linkRepository.findByUserIdAndIsPinned(userId, true)
                 .stream()
                 .map(LinkResponse::from)
                 .toList();

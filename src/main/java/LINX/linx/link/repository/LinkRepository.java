@@ -9,7 +9,8 @@ import java.util.List;
 import java.util.Optional;
 
 public interface LinkRepository extends JpaRepository<Link, Long> {
-    List<Link> findByIsPinned(Boolean pinned);
+    List<Link> findByUserId(Long userId);
+    List<Link> findByUserIdAndIsPinned(Long userId, Boolean pinned);
     List<Link> findByFolderId(Long folderId);
     long countByUserId(Long userId);
     long countByUserIdAndCreatedAtBetween(Long userId, LocalDateTime start, LocalDateTime end);

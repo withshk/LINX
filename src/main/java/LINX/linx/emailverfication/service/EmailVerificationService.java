@@ -5,6 +5,7 @@ import LINX.linx.emailverfication.EmailVerification;
 import LINX.linx.emailverfication.repository.EmailVerificationRepository;
 import LINX.linx.user.repository.UserRepository;
 import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.HttpStatus;
 import org.springframework.mail.MailException;
@@ -17,6 +18,7 @@ import java.security.SecureRandom;
 import java.time.LocalDateTime;
 import java.util.regex.Pattern;
 
+@Slf4j
 @Service
 @RequiredArgsConstructor
 public class EmailVerificationService {
@@ -31,6 +33,9 @@ public class EmailVerificationService {
 
     @Value("${mail.auth-code-expiration-millis}")
     private long expirationMillis;
+
+    @Value("${spring.mail.username}")
+    private String mailUsername;
 
     @Transactional
     public long sendCode(String email) {
@@ -52,6 +57,12 @@ public class EmailVerificationService {
                 .build();
         emailVerificationRepository.save(verification);
 
+        // 메일 계정(MAIL_USERNAME/MAIL_PASSWORD)이 없으면 로컬 개발용으로 서버 로그에 코드를 찍고 넘어감
+        if (mailUsername.isBlank()) {
+            log.warn("메일 계정 미설정 - [{}] 인증 코드: {}", email, code);
+            return expirationMillis / 1000;
+        }
+
         SimpleMailMessage message = new SimpleMailMessage();
         message.setTo(email);
         message.setSubject("[LINX] 이메일 인증 코드");
@@ -59,6 +70,7 @@ public class EmailVerificationService {
         try {
             mailSender.send(message);
         } catch (MailException e) {
+            log.error("인증 메일 발송 실패: {}", email, e);
             throw new CustomException("EMAIL_SEND_FAILED", HttpStatus.INTERNAL_SERVER_ERROR, "나중에 다시 시도해주십시오.");
         }
 

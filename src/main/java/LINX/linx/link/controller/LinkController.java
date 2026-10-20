@@ -27,15 +27,15 @@ public class LinkController {
     }
 
     @GetMapping
-    public ApiResponse<LinkListData> getAllLinks() {
-        List<LinkResponse> links = linkService.getAllLinks();
+    public ApiResponse<LinkListData> getAllLinks(HttpServletRequest request) {
+        List<LinkResponse> links = linkService.getAllLinks(getCurrentUserId(request));
         LinkListData data = new LinkListData(links, links.size());
         return ApiResponse.success(data);
     }
 
     @GetMapping("/pinned")
-    public ApiResponse<LinkListData> getPinnedLinks() {
-        List<LinkResponse> links = linkService.getPinnedLinks();
+    public ApiResponse<LinkListData> getPinnedLinks(HttpServletRequest request) {
+        List<LinkResponse> links = linkService.getPinnedLinks(getCurrentUserId(request));
         LinkListData data = new LinkListData(links, links.size());
         return ApiResponse.success(data);
     }

@@ -23,8 +23,8 @@ public class FolderController {
     }
 
     @GetMapping
-    public List<FolderResponse> getAllFolders() {
-        return folderService.getAllFolders();
+    public List<FolderResponse> getAllFolders(HttpServletRequest request) {
+        return folderService.getAllFolders(getCurrentUserId(request));
     }
 
     private Long getCurrentUserId(HttpServletRequest request) {
